@@ -1,0 +1,149 @@
+/* Reset default margins and paddings, set box-sizing, and font family */
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    color: #e63946; /* Beautiful red font color */
+}
+
+/* Style the body */
+body {
+    background-color: #2e2e2e; /* Dark grey background */
+}
+
+/* Ensure the container accounts for the fixed nav bar */
+.container {
+    position: relative;
+    min-height: 100vh;
+    background: #2e2e2e; /* Dark grey background */
+    padding-top: 60px; /* Adjust this value based on the height of the nav bar */
+}
+
+.container .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.container .image-container .image {
+    height: 250px;
+    width: 350px;
+    border: 10px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.container .image-container .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+
+.container .image-container .image:hover img {
+    transform: scale(1.1);
+}
+
+.container .popup-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .9);
+    height: 100%;
+    width: 100%;
+    z-index: 1000; /* Ensure popup is above everything */
+    display: none;
+}
+
+.container .popup-image span {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 60px;
+    font-weight: bolder;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1100; /* Ensure close button is above popup and nav */
+}
+
+.container .popup-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #fff;
+    border-radius: 5px;
+    width: 750px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .container .popup-image img {
+        width: 95%;
+    }
+}
+
+/* Style links */
+a {
+    text-decoration: none;
+    color: #e63946; /* Beautiful red font color */
+}
+
+a:hover {
+    color: gray;
+}
+
+/* Style the navigation bar */
+nav {
+    display: flex;
+    width: 100%;
+    height: 60px; /* Adjust this value based on your nav bar height */
+    border-bottom: 1px solid white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #2e2e2e; /* Dark grey background to match the body */
+    z-index: 900; /* Ensure nav is above other content but below popup */
+}
+
+/* Style each section within the navigation bar */
+.nav-section {
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 1rem;
+    border-left: 1px solid white;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style the logo section */
+#nav-logo-section {
+    justify-content: flex-start;
+}
+
+#nav-logo-section > a > i {
+    font-size: 2.5rem;
+    color: #e63946; /* Beautiful red font color */
+}
+
+/* Define layout for logo and links */
+#nav-logo-section, #nav-link-section {
+    flex-basis: calc(100% / 3);
+}
+
+#nav-link-section {
+    gap: 6rem;
+}
+
+#nav-social-section {
+    gap: 4rem;
+}
+
+/* Style social links and contact section */
+#nav-social-section, #nav-contact-section {
+    flex-grow: 1;
+}

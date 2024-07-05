@@ -1,0 +1,209 @@
+/* Reset default margins and paddings, set box-sizing, and font family */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Set background color for the body */
+body {
+    background-color: #2e2e2e;
+    color: #e63946; /* Beautiful red font color */
+}
+
+/* Styles for the heading section */
+.heading {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.heading h1 {
+    font-size: 50px;
+    color: #e63946; /* Beautiful red font color */
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* Adds a line under the heading */
+.heading h1::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    display: block;
+    margin: 0 auto;
+    background-color: #e63946; /* Beautiful red font color */
+}
+
+.heading p {
+    font-size: 18px;
+    color: #e63946; /* Beautiful red font color */
+    margin-bottom: 45px;
+}
+
+/* Container styles */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+/* About section styles */
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    flex: 1;
+    margin: 40px;
+    overflow: hidden;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: 0.5s ease;
+}
+
+/* Zoom effect on hover for image */
+.about-image:hover img {
+    transform: scale(1.2);
+}
+
+.about-content {
+    flex: 1;
+}
+
+/* Styles for the 'Read More' link */
+.read-more {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+/* About content heading */
+.about-content h2 {
+    font-size: 23px;
+    margin-bottom: 15px;
+    color: #e63946; /* Beautiful red font color */
+}
+
+/* About content paragraph */
+.about-content p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #e63946; /* Beautiful red font color */
+}
+
+/* Styles for the 'Read More' button */
+.about-content .read-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 15px;
+    transition: 0.3s ease;
+}
+
+/* 'Read More' button hover effect */
+.about-content .read-more:hover {
+    background-color: lightblue;
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+a:hover {
+    color: gray;
+}
+
+/* Style the navigation bar */
+nav {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+
+/* Style each section within the navigation bar */
+.nav-section {
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 1rem;
+    border-left: 1px solid white;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style the logo section */
+#nav-logo-section {
+    justify-content: flex-start;
+}
+
+#nav-logo-section > a > i {
+    font-size: 2.5rem;
+    color: #e63946; /* Beautiful red font color */
+}
+
+/* Define layout for logo and links */
+#nav-logo-section, #nav-link-section {
+    flex-basis: calc(100% / 3);
+}
+
+#nav-link-section {
+    gap: 6rem;
+}
+
+#nav-social-section {
+    gap: 4rem;
+}
+
+/* Style social links and contact section */
+#nav-social-section, #nav-contact-section {
+    flex-grow: 1;
+}
+
+/* Responsive design for screens smaller than 768px */
+@media screen and (max-width: 768px) {
+    .heading {
+        padding: 0 20px;
+    }
+    .heading h1 {
+        font-size: 36px;
+    }
+    .heading p {
+        font-size: 17px;
+        margin-bottom: 0;
+    }
+    .container {
+        padding: 0;
+    }
+    .about {
+        padding: 20px;
+        flex-direction: column;
+    }
+    .about-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .about-content p {
+        padding: 0;
+        font-size: 16px;
+    }
+    .about-content .read-more {
+        font-size: 16px;
+    }
+}

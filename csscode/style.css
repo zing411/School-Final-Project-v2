@@ -1,0 +1,219 @@
+/* Define root variables for colors */
+:root {
+    --background-color: #2e2e2e; /* Dark grey background */
+    --border-color: white;
+    --font-color: #e63946; /* Beautiful red font color */
+}
+
+/* Apply styles to the body */
+body {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    color: var(--font-color);
+}
+
+/* Style text elements */
+h1, h2, h3, a, p, span {
+    font-family: "rubik", sans-serif;
+    font-weight: 400;
+    color: var(--font-color);
+}
+
+/* Style links */
+a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+a:hover {
+    color: gray;
+}
+
+/* Style the navigation bar */
+nav {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Style each section within the navigation bar */
+.nav-section {
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 1rem;
+    border-left: 1px solid var(--border-color);
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style the logo section */
+#nav-logo-section {
+    justify-content: flex-start;
+}
+
+#nav-logo-section > a > i {
+    font-size: 2.5rem;
+    color: var(--font-color);
+}
+
+/* Define layout for logo and links */
+#nav-logo-section, #nav-link-section {
+    flex-basis: calc(100% / 3);
+}
+
+#nav-link-section {
+    gap: 6rem;
+}
+
+#nav-social-section {
+    gap: 4rem;
+}
+
+/* Style social links and contact section */
+#nav-social-section, #nav-contact-section {
+    flex-grow: 1;
+}
+
+/* Style the main content area */
+main {
+    flex-grow: 1;
+    position: relative;
+}
+
+/* Style each article */
+.article-group {
+    display: none;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    color: var(--font-color);
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Display the active article */
+.article-group[data-status="active"] {
+    display: grid;
+}
+
+/* Style sections within an article */
+.article-section {
+    padding: 1rem;
+    height: 100%;
+}
+
+/* Add borders to description and nav sections */
+.article-description-section, .article-nav-section {
+    border-left: 1px solid var(--border-color);
+}
+
+.article-title-section, .article-nav-section {
+    border-top: 1px solid var(--border-color);
+}
+
+/* Style navigation buttons */
+.nav-button {
+    background: none;
+    border: none;
+    color: var(--font-color);
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    color: gray;
+}
+
+/* Hide inactive articles */
+.article-group[data-status="inactive"] {
+    transform: scale(0);
+}
+
+/* Slide animations */
+.slide-in-right {
+    animation: slideInRight 0.5s forwards;
+}
+
+.slide-out-left {
+    animation: slideOutLeft 0.5s forwards;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.5s forwards;
+}
+
+.slide-out-right {
+    animation: slideOutRight 0.5s forwards;
+}
+
+/* Keyframes for slide-in animation from the right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes for slide-out animation to the left */
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Keyframes for slide-in animation from the left */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes for slide-out animation to the right */
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Style images within articles */
+.sportsimage {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+
+/* Style the title font size */
+.article-title-section {
+    font-size: 2rem; /* Increased font size for title */
+    font-family: "Rubik", sans-serif;
+    font-weight: 700; /* Make the title bold */
+}
+
+/* Style the description font size and font */
+.article-description-section {
+    font-size: 1.2rem; /* Slightly larger font for description */
+    font-family: "Roboto", sans-serif; /* Change to a different, more readable font */
+    line-height: 1.5; /* Increase line height for better readability */
+}

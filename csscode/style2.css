@@ -1,0 +1,118 @@
+/* Reset default margins and paddings, set box-sizing, and font family */
+* {
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #e63946; /* Beautiful red font color */
+}
+
+/* Set background color for the body */
+body {
+    width: 100%;
+    padding-top: 120px; /* Adjusted padding to account for fixed nav */
+    background-color: #2e2e2e; /* Dark grey background */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 30px;
+}
+
+.book {
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    background-color: #292828;
+    padding: 20px;
+}
+
+.picture {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.book_text {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.add-to-cart {
+    background-color: #fff;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-to-cart:hover {
+    background-color: #ccc;
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+a:hover {
+    color: gray;
+}
+
+/* Style the navigation bar */
+nav {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #2e2e2e; /* Dark grey background to match the body */
+    z-index: 1000; /* Ensures nav stays above other content */
+}
+
+/* Style each section within the navigation bar */
+.nav-section {
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 1rem;
+    border-left: 1px solid white;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style the logo section */
+#nav-logo-section {
+    justify-content: flex-start;
+}
+
+#nav-logo-section > a > i {
+    font-size: 2.5rem;
+    color: #e63946; /* Beautiful red font color */
+}
+
+/* Define layout for logo and links */
+#nav-logo-section, #nav-link-section {
+    flex-basis: calc(100% / 3);
+}
+
+#nav-link-section {
+    gap: 6rem;
+}
+
+#nav-social-section {
+    gap: 4rem;
+}
+
+/* Style social links and contact section */
+#nav-social-section, #nav-contact-section {
+    flex-grow: 1;
+}
